@@ -1,0 +1,9 @@
+https://github.com/joydip-git/abb-vuejs-15thjuly2024
+
+<script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js"></script>
+
+"scripts": {  
+  "serve": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",  
+  "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",  
+  "lint": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+},
