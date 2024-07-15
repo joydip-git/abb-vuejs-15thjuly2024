@@ -10,13 +10,20 @@
   </div>
 </template>
 
-<script setup>
+<script>
   import { ref } from "vue";
-
-  //replacement of data option
-  const counter = ref(0);
-  const increase = () => {
-    counter.value++;
+  export default {
+    setup: function () {
+      //replacement of data option
+      const counter = ref(0);
+      const increase = () => {
+        counter.value++;
+      };
+      return {
+        counter,
+        increase,
+      };
+    },
   };
 </script>
 

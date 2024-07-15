@@ -129,4 +129,29 @@ App.component('counter-comp',CounterComp)
 Proxy in JavaScript
 
 
+Multiple Vue App Vs single page app
+
+data binding: a way of passing data from component code to the same component template
+{{prop-name}} 
+or
+<html-element v-bind:attribute="prop1">
+or
+<html-element :attribute="prop1">
+
+event binding:a way of passing data to component code from the same component template
+
+<html-element v-on:event-name="method"> <== automatically event object is passed as an argument
+<html-element v-on:event-name="method($event,other-data)">
+
+two-way binding:
+a. mixture of two different one way binding related to same property
+<html-element v-bind:attribute="prop1" v-on:event-name="method">
+b. v-model directive
+<html-element v-model="prop1">
+
+
+
+
+
+
 

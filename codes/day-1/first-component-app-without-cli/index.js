@@ -59,7 +59,8 @@ const CounterComp = {
     `
 }
 
-const app = Vue.createApp({})
+const app = Vue.createApp({
+})
 app.component(
     'counter-comp',
     CounterComp
