@@ -4,8 +4,8 @@ const rootApp = Vue.createApp({
         return {
             //message: "Welcome to Vue JS",
             name: "",
-            counter: 0,
-            greetingStyle: "Welcome"
+            greetingStyle: "Welcome",
+            counter: 0
         }
     },
     methods: {
