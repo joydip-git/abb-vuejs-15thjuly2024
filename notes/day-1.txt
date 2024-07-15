@@ -1,0 +1,104 @@
+s/w: Node JS
+Editor: VS Code
+
+What is SPA?
+
+index.html
+<html>
+	<head></head>
+	<body>
+		<div id="root">
+			design
+		</div>
+	</body>
+</html>
+
+a.html
+<div>
+	Hi....
+</div>
+
+b.html
+<table></table>
+
+const Home = lazy(()=>import('./..'))
+
+import Home from './'
+
+
+<app-header></app-header>
+
+<Header />
+
+<Header /> => <app-header>
+
+
+<Home /> 
+
+<div>
+	<Header/>
+	<SidePanel />
+	<ContentPanel />
+	<Footer />
+</div>
+
+/home => Home
+/about => About
+
+Client-side rendering
+Server-side rendering
+
+PWA
+
+Angular => JS "framework"
++ ionic +Cordova apis => mobile
+
+React JS => JS "library" 
+React Native => Mobile apps
+
+Vue JS => framework, SPA, client-side and server-side
+it helps you make a very interactive and "reactive" web application
+
+Vue JS App
+
+vue-js-apps
+	first-vue-app
+	second-vue-app
+
+when the entire DOM is created, then "DOMContentLoaded" event gets fired. "defer" attribute will help you load the script after that event.
+
+Node JS => open source JS runtime built at the top of JS engine (V8 => is also part of the chrome browser)
+Ryan Dahl (2009)
+
+JS data types:
+string, boolean, number, object, function
+
+NaN, undefined, null, Infinity
+
+Vue JS App:
+
+{
+	data:function(){
+		return {
+			prop1:value1,
+			prop2:value2
+		}
+	},
+	methods:{
+		m1(){}
+		m2(){}
+	}
+}
+
+
+{
+		prop1:value1,
+		prop2:value2,
+		m1(){},
+		m2(){}
+}
+
+{{ prop1 }}
+
+
+
