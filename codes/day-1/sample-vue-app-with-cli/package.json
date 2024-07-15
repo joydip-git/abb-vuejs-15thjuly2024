@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vite",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vite build",
+    "preview": "set NODE_OPTIONS=--openssl-legacy-provider && vite preview",
+    "lint": "set NODE_OPTIONS=--openssl-legacy-provider && eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "vue": "^3.4.29"

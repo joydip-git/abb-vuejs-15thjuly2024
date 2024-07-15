@@ -1,47 +1,33 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <h3>Vue JS Components</h3>
+  <div>
+    <counter-comp></counter-comp>
+    <br />
+    <CounterComp />
+    <br />
+    <WelcomeComp />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+  import CounterComp from "./components/counter-comp/CounterComp.vue";
+  import WelcomeComp from "./components/welcome-comp/WelcomeComp.vue";
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  const App = {
+    components: {
+      CounterComp,
+      WelcomeComp,
+    },
+  };
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  export default App;
+</script>
+
+<style lang="css" scoped>
+  h3 {
+    background-color: brown;
+    color: whitesmoke;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>

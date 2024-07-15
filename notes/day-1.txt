@@ -115,6 +115,18 @@ React Element
 HTML Input element
 
 Vue JS CLI (Command Line Interface)
+>npm install @vue/cli --location=global
+
+>npx @vue/latest create
+
+
+CounterComp
+FooterComp => 'footer-comp' 
+
+App.component('counter-comp',CounterComp)
+
+
+Proxy in JavaScript
 
 
 
