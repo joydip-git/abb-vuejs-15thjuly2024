@@ -2,12 +2,41 @@
 const rootApp = Vue.createApp({
     data: function () {
         return {
-            message: "Welcome to Vue JS"
+            //message: "Welcome to Vue JS",
+            name: "",
+            counter: 0,
+            greetingStyle: "Welcome"
         }
     },
     methods: {
+        // updateMessage(e) {
+        //     //console.log(e.target.value);
+        //     this.message = e.target.value
+        // },
+        changeGreeting() {
+            if (this.greetingStyle === "Welcome") {
+                this.greetingStyle = "Hola"
+            } else if (this.greetingStyle === "Hola") {
+                this.greetingStyle = "Welcome"
+            } else {
+                this.greetingStyle = ""
+            }
+        },
+        updateMessage(value) {
+            this.message = value
+        },
         changeMessage() {
             this.message = "Welcome to Vue data and event binding"
+        },
+        increaseCounter: function () {
+            this.counter += 1
+        }
+    },
+    computed: {
+        //message(){ return somethimg } 
+        message: function () {
+            console.log("new message produced");
+            return this.greetingStyle + " " + this.name
         }
     }
 })
@@ -15,7 +44,7 @@ rootApp.mount("#root")
 
 //2nd Vue App
 const otherApp = Vue.createApp({
-    data: function () {
+    data() {
         return {
             message: "this is anoter app"
         }

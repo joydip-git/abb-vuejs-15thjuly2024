@@ -100,5 +100,19 @@ Vue JS App:
 
 {{ prop1 }}
 
+different techniques to create a Vue App:
+a. options api (the properties of Vue App configuration object)
+b. composition api (from Vue JS version 3)
+
+React Element
+{
+	type:'div',
+	attributes:{id:'root'},
+	children:[]
+
+}
+
+HTML Input element
+
 
 

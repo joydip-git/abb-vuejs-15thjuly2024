@@ -11,15 +11,27 @@
 </head>
 
 <body>
-    <div id="another">
+    <!-- <div id="another">
         {{message}}
-    </div>
+    </div> -->
     <br>
     <div id="root">
         <div>
+            <!-- <span>Message:&nbsp;{{message}}</span> -->
+            <label for="txtName">Name: &nbsp;</label>
+            <input type="text" id="txtName" v-model="name" />
+            <!-- <input type="text" id="txtMessage" v-bind:value="message" v-on:input="updateMessage($event.target.value)" /> -->
+            <!-- <input type="text" id="txtMessage" v-model="message" /> -->
+            <br>
             <span>Message:&nbsp;{{message}}</span>
             <br>
-            <button type="button" v-on:click="changeMessage">Change Message</button>
+            <button type="button" v-on:click="changeGreeting">Change Greeting Style</button>
+            <!-- <button type="button" v-on:click="changeMessage">Change Message</button> -->
+        </div>
+        <div>
+            <span>Counter: &nbsp; {{counter}}</span>
+            <br>
+            <button type="button" v-on:click="increaseCounter">Increase</button>
         </div>
     </div>
 </body>
