@@ -3,6 +3,7 @@ a. data binding: v-bind, v-once
 b. event binding and event modifiers: v-on
 c. displaying list of items: v-for
 d. conditional rendering: v-if, v-else, v-else-if
+
 e. class and style bindings
 f. form input bindings: v-model
 
@@ -11,9 +12,17 @@ a. interaction between components
 	i. passing data from parent to a nested component
 	ii. passing data to parent from a nested component
 
-b. provide and inject
+b. lifecycle events and methods
 
-c. lifecycle events and methods
+c. provide and inject
+
+d. make HTTP requests and watchers ("watch option api")
+
+e. form input  and its validation
+
+f. state management via VueX and Pinia
+
+g. Composition API
 
 Event modifiers:
 @event-name.modifier-name or v-on:event-name.modifier-name
