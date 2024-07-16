@@ -1,0 +1,55 @@
+different directives:
+a. data binding: v-bind, v-once
+b. event binding and event modifiers: v-on
+c. displaying list of items: v-for
+d. conditional rendering: v-if, v-else, v-else-if
+e. class and style bindings
+f. form input bindings: v-model
+
+components:
+a. interaction between components
+	i. passing data from parent to a nested component
+	ii. passing data to parent from a nested component
+
+b. provide and inject
+
+c. lifecycle events and methods
+
+Event modifiers:
+@event-name.modifier-name or v-on:event-name.modifier-name
+@event-name.modifier-name="" or v-on:event-name.modifier-name=""
+
+
+list of items:
+in-place patch strategy
+
+.stop
+.prevent
+.self
+.capture
+.once
+.passive
+
+key aliases:
+.enter, .tab, .delete, .esc, .up,....
+
+system modifier keys:
+.ctrl, .alt,...
+
+mouse button midifiers:
+.let, .right, 
+
+form input modifiers:
+lazy, number, trim
+
+
+
+{
+            name: "anil",
+            id: 1,
+            salary: 1000,
+          }
+
+<span v-if="!people">
+<div v-if="people && people.length>0">
+<span v-if="people.length===0">
