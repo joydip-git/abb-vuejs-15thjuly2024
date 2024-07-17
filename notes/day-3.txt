@@ -1,0 +1,34 @@
+1. data fetching
+2. watch and lifecycle hooks
+
+fetch api => broswer
+return type: Promise<Response>
+
+axios => 3rd party library
+.get,.post, .put, .delete, .patch,....
+
+return type: Promise<AxiosResponse<type-of-data-in-response-body>>
+
+Promise API:
+JS is single threaded, but it can have asynchornous methods, thanks to the runtime environment  where the JS code is executed. 
+To create asynchronous methods in JS, you can use Promise API of JS (introduced in 2015, as part of ES6 proposal)
+
+runtime environments:
+a. browser
+b. non-browser: node, rhino, dino etc.
+
+Browser JS engines:
+chrome: V8
+safari: JS Core
+firefox: Spidermonkey
+
+Node JS:
+Ryan Dahl => Node JS (a JS runtime built at the top of V8 engine)
+
+Document Object Model APIs: 
+	fetch API
+	document => getElementById(), ...
+	window => alert
+
+
+
