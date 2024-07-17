@@ -11,6 +11,9 @@
 <template>
   <div>
     <ProductsList />
+    <br />
+    <br />
+    <!--<some />-->
   </div>
 </template>
 

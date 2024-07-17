@@ -42,4 +42,13 @@ beforeupdate, re-render and patch changes, updated
 beforeunmount, unmounted
 
 
+state management - application wide
+
+store => states, methods to mutate the states in the store
+connect the store with the application
+subscribe to a state from a component
+send request to store from component => what to do and any data needed  to perform that action
+
+vuex and pinia
+
 
