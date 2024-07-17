@@ -30,5 +30,16 @@ Document Object Model APIs:
 	document => getElementById(), ...
 	window => alert
 
+lifecyle:
+
+1. creation and mounting phase:
+beforecreate, [after that options api initialized], created, beforemount, mounted
+
+2. updation phase:
+beforeupdate, re-render and patch changes, updated
+
+3. unmounting phase:
+beforeunmount, unmounted
+
 
 

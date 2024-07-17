@@ -9,5 +9,5 @@ export const getTodos = () => {
 
 export const getTodo = (id) => {
     // return Axios.get(`${url}/${id}`)
-    return axiosInstance.get(id)
+    return axiosInstance.get(`/${id}`)
 }

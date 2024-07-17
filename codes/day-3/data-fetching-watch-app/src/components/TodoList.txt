@@ -1,0 +1,182 @@
+<template>
+  <button
+    type="button"
+    @click="counter++">
+    Increase
+  </button>
+  <br />
+  <span>Counter:&nbsp;{{ counter }}</span>
+  <br />
+  <br />
+  <h2>List of Todos</h2>
+  <!-- <br />
+  <button
+    type="button"
+    @click="fetchTodos">
+    Load
+  </button> -->
+  <br />
+  <br />
+  <span v-if="!fetchingComplete"> Loading... </span>
+  <table v-else-if="todos.length > 0">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>Done</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        v-for="todo in todos"
+        :key="todo.id">
+        <td>
+          <u @click="selectTodo(todo.id)">
+            {{ todo.title }}
+          </u>
+        </td>
+        <td>{{ todo.completed ? "yes" : "no" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <span v-else>No records...</span>
+  <br />
+  <span v-if="errorInfo !== ''">Error: &nbsp; {{ errorInfo }}</span>
+  <span v-if="selectedToDoId > 0">
+    <span v-if="selectedTodo !== null">
+      view details of {{ selectedTodo.title }}
+    </span>
+    <span v-else>no data yet...</span>
+    <!-- <TodoDetail/> -->
+  </span>
+  <br />
+  <!-- <span>selected id: &nbsp;{{ selectedToDoId }}</span> -->
+</template>
+<script>
+  import { getTodo, getTodos } from "../services/todoservice";
+
+  export default {
+    data: function () {
+      return {
+        todos: [],
+        errorInfo: "",
+        fetchingComplete: false,
+        counter: 0,
+        selectedToDoId: 0,
+        selectedTodo: null,
+      };
+    },
+    beforeCreate() {
+      alert("before create");
+      //option objects are created, but initialized
+      console.log(this.$options.data["todos"]);
+    },
+    created() {
+      alert("created");
+      //you can access options
+      console.log(this.todos);
+    },
+    beforeMount() {
+      alert("before mount");
+      console.log(this.todos);
+    },
+    mounted() {
+      alert("mounted");
+      console.log(this.todos);
+      this.fetchTodos();
+    },
+    beforeUpdate() {
+      alert("before update");
+      console.log(this.todos);
+      console.log(this.selectedToDoId);
+      // if (
+      //   this.selectedTodo === null ||
+      //   (this.selectedToDoId > 0 &&
+      //     this.selectedToDoId !== this.selectedTodo.id)
+      // )
+      //   getTodo(this.selectedToDoId).then(
+      //     (resp) => {
+      //       if (resp.status === 200) {
+      //         this.selectedTodo = resp.data;
+      //         this.errorInfo = "";
+      //       } else {
+      //         this.selectedTodo = null;
+      //         this.errorInfo = resp.statusText;
+      //       }
+      //     },
+      //     (e) => {
+      //       this.selectedTodo = null;
+      //       this.errorInfo = e.message;
+      //     }
+      //   );
+    },
+    updated() {
+      alert("updated");
+      console.log(this.todos);
+    },
+    beforeUnmount() {
+      alert("before unmount");
+      console.log(this.todos);
+    },
+    unmounted() {
+      alert("unmounted");
+      console.log(this.todos);
+    },
+    methods: {
+      selectTodo(id) {
+        alert("starting to fetch data");
+        this.selectedToDoId = id;
+        alert(this.selectedToDoId);
+        console.log(this.selectedToDoId);
+      },
+      async fetchTodos() {
+        try {
+          const resp = await getTodos();
+          if (resp.status === 200) {
+            this.todos = resp.data.slice(0, 5);
+            this.errorInfo = "";
+            this.fetchingComplete = true;
+          } else {
+            this.todos = [];
+            this.errorInfo = resp.statusText;
+            this.fetchingComplete = true;
+          }
+        } catch (error) {
+          this.todos = [];
+          this.errorInfo = error.message;
+          this.fetchingComplete = true;
+        }
+      },
+      // async fetchTodo(id) {
+      async fetchTodo() {
+        try {
+          //const resp = await getTodo(id);
+          const resp = await getTodo(this.selectedToDoId);
+          if (resp.status === 200) {
+            this.selectedTodo = resp.data;
+            this.errorInfo = "";
+          } else {
+            this.selectedTodo = null;
+            this.errorInfo = resp.statusText;
+          }
+        } catch (error) {
+          this.selectedTodo = null;
+          this.errorInfo = error.message;
+        }
+      },
+    },
+    watch: {
+      // selectedToDoId(newId, oldId) {
+      // if (newId !== oldId) this.fetchTodo(newId);
+      //}
+      // selectedToDoId: function (newId, oldId) {
+      //   //if (newId !== oldId) this.fetchTodo(newId);
+      //   if (newId !== oldId) this.fetchTodo();
+      // },
+      selectedToDoId: {
+        handler(newId, oldId) {
+          if (newId !== oldId) this.fetchTodo();
+        },
+      },
+    },
+  };
+</script>
