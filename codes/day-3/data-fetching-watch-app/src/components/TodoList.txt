@@ -176,7 +176,14 @@
         handler(newId, oldId) {
           if (newId !== oldId) this.fetchTodo();
         },
+        //immediate:true
       },
+      //someprop:{
+        handler(new,old){
+
+        },
+        immediate:true
+      }
     },
   };
 </script>

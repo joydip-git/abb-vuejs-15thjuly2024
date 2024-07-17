@@ -69,7 +69,7 @@
 <script>
   // import { Product } from "../models/product";
   export default {
-    //props: ["selectedProduct"],
+    //props: ["selectedProductId"],
     props: {
       selectedProductId: {
         type: Number,

@@ -60,6 +60,7 @@
         }
       },
     },
+    //if you are using mounted() then don't set immediate=true in watcher for selectedId
     mounted() {
       this.fetchTodo();
     },
